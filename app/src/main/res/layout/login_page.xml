@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_type" />
+
+        <TextView
+            android:id="@+id/tv_mainPage1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Halo! Selamat datang di Minterin"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_mainPage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="Sudah punya akun?"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/user" />
+
+            <EditText
+                android:id="@+id/et_unameLogin"
+                android:layout_width="296dp"
+                android:layout_height="wrap_content"
+                android:text="audi.isra"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/pass" />
+
+            <EditText
+                android:id="@+id/et_passLogin"
+                android:layout_width="296dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="password"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_masuk"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16sp"
+            android:text="masuk"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_gravity="center"
+            android:text="Belum punya akun?"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="tv_daftar"
+            android:text="daftar"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
