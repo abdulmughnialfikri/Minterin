@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "443156488521",
+    "firebase_url": "https://minterin-1c145.firebaseio.com",
+    "project_id": "minterin-1c145",
+    "storage_bucket": "minterin-1c145.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443156488521:android:4c1e998ad7d14f5f",
+        "android_client_info": {
+          "package_name": "mighty13.minterin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443156488521-nqsa12vb53h0d8d4p21n4bdghbq312vt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_3WsT9gxN-R1mmvfx83eu4q1sn-_p0H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443156488521-nqsa12vb53h0d8d4p21n4bdghbq312vt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
