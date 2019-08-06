@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6C63FF</color>
-    <color name="colorPrimaryDark">#30373D</color>#
+    <color name="colorPrimaryDark">#30373D</color>
+    <color name="colorPrimarySoftDark">#9EA7B1</color>
     <color name="colorPrimaryLight">#FFFFFF</color>
+    <color name="colorGold">#F1AF4D</color>
+    <color name="colorProgressTint">#5ED759</color>
     <color name="colorAccent">#D81B60</color>
 </resources>

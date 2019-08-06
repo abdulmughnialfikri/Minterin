@@ -38,10 +38,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            >
+            android:gravity="center_horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civ_profile_picture"
@@ -55,8 +54,8 @@
                 android:layout_height="40dp"
                 android:layout_alignEnd="@+id/civ_profile_picture"
                 android:layout_alignBottom="@+id/civ_profile_picture"
-                android:src="@drawable/add_photo"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/add_photo" />
 
         </RelativeLayout>
 
@@ -66,13 +65,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginRight="12dp"
                 android:src="@drawable/user" />
 
@@ -81,9 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="audi.isra"
-                android:textSize="14sp"
                 android:textColor="@color/colorPrimaryDark"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,20 +91,19 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/email"/>
+                android:src="@drawable/email" />
 
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="audi.isra@students.telkomuniversity.ac.id"
-                android:textSize="14sp"
                 android:textColor="@color/colorPrimaryDark"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,9 +114,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_gravity="center_vertical"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginRight="12dp"
                 android:src="@drawable/pass" />
 
@@ -130,32 +126,31 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:text="password"
-                android:textSize="14sp"
                 android:textColor="@color/colorPrimaryDark"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_masuk"
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16sp"
-            android:text="daftar"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:background="@drawable/bg_btn"
             android:backgroundTint="@color/colorPrimary"
-            />
+            android:text="daftar"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="14dp"
             android:text="Sudah punya akun?"
-            android:textSize="14sp"
             android:textColor="@color/colorPrimaryDark"
-            />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -164,9 +159,9 @@
             android:onClick="tv_daftar"
             android:text="masuk"
             android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
