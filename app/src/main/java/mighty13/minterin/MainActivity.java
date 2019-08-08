@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.register_page);
 
         //Set Dummy Progress Bar
-        progBar = findViewById(R.id.progressBar);
-        progBar.setProgress(30);
+//        progBar = findViewById(R.id.progressBar);
+//        progBar.setProgress(30);
 
 //        //ListView
 //        listView = findViewById(R.id.lv_materi_matkul);
@@ -45,22 +45,22 @@ public class MainActivity extends AppCompatActivity {
 //        listView.setAdapter(adapterlist);
 
         //RecyclerView
-        recyclerView = (RecyclerView) findViewById(R.id.rv_materi_himpunan);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        dummyList = new ArrayList<>();
-
-        for (int i = 0; i <7 ; i++) {
-            ListVideo dummyListItem;
-            dummyListItem = new ListVideo(
-                    "Himpunan 0" + (i+1),
-                    20 + (i*10) );
-            dummyList.add(dummyListItem);
-        }
-
-        adapter =  new ListVideoAdapter(dummyList,this);
-        recyclerView.setAdapter(adapter);
+//        recyclerView = findViewById(R.id.rv_materi_himpunan);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        dummyList = new ArrayList<>();
+//
+//        for (int i = 0; i <7 ; i++) {
+//            ListVideo dummyListItem;
+//            dummyListItem = new ListVideo(
+//                    "Himpunan 0" + (i+1),
+//                    20 + (i*10) );
+//            dummyList.add(dummyListItem);
+//        }
+//
+//        adapter =  new ListVideoAdapter(dummyList,this);
+//        recyclerView.setAdapter(adapter);
 
     }
 
