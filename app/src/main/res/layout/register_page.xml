@@ -40,17 +40,18 @@
         android:gravity="center_horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/civ_profile_picture"
+            android:id="@+id/civ_ProfPict"
             android:layout_width="108dp"
             android:layout_height="108dp"
             android:src="@drawable/user"
             app:civ_border_color="@color/colorPrimaryDark" />
 
         <ImageButton
+            android:id="@+id/ib_uploadPict"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignEnd="@+id/civ_profile_picture"
-            android:layout_alignBottom="@+id/civ_profile_picture"
+            android:layout_alignEnd="@+id/civ_ProfPict"
+            android:layout_alignBottom="@+id/civ_ProfPict"
             android:background="@android:color/transparent"
             android:src="@drawable/add_photo" />
 
@@ -72,10 +73,10 @@
             android:src="@drawable/user" />
 
         <EditText
-            android:id="@+id/et_unameLogin"
-            android:layout_width="wrap_content"
+            android:id="@+id/et_unameRegist"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="audi.isra"
+            android:hint="username"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp" />
     </LinearLayout>
@@ -95,10 +96,11 @@
             android:src="@drawable/email" />
 
         <EditText
-            android:id="@+id/et_email"
-            android:layout_width="wrap_content"
+            android:id="@+id/et_emailRegist"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="audi.isra@students.telkomuniversity.ac.id"
+            android:inputType="textEmailAddress"
+            android:hint="email"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp" />
     </LinearLayout>
@@ -118,17 +120,17 @@
             android:src="@drawable/pass" />
 
         <EditText
-            android:id="@+id/et_passLogin"
+            android:id="@+id/et_passwordRegist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:text="password"
+            android:hint="password"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_masuk"
+        android:id="@+id/btn_signUp"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="160dp"
         android:layout_height="40dp"
@@ -150,10 +152,10 @@
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/tv_toLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="tv_daftar"
         android:text="masuk"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
