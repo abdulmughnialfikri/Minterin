@@ -44,9 +44,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if(mFirebaseUser != null){
-                    Toast.makeText(LoginActivity.this, "Berhasil Masuk", Toast.LENGTH_SHORT)
-                            .show();
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    //Toast.makeText(LoginActivity.this, "Berhasil Masuk", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, MataKuliahActivity.class);
                     startActivity(intent);
                 } else {
                     //Jika Belum Login
@@ -83,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, MataKuliahActivity.class);
                                 startActivity(intent);
 
                             }

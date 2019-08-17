@@ -45,14 +45,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
-    String judul_materi[] = {"Himpunan", "Aljabar", "Integral", "Turunan", "Persamaan", "Pertidaksamaan"};
-    int jumlah_video[] = {12, 9, 13, 8, 5, 7};
-
-    ProgressBar progBar;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<ListVideo> dummyList;
 
     EditText username, email, password;
     Button btnSignUp;
@@ -64,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
     static int PReqCode = 1;
     static int REQUESTCODE = 1;
 
-    private void checkAndRequestForPermission(){
+    private void checkAndRequestForPermission() {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED){
-            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)){
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 Toast.makeText(MainActivity.this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
             } else {
                 ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PReqCode);
@@ -77,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void openGallery(){
+    private void openGallery() {
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, REQUESTCODE);
@@ -100,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openGallery();
-                if (Build.VERSION.SDK_INT >= 22){
+                if (Build.VERSION.SDK_INT >= 22) {
                     checkAndRequestForPermission();
                 } else {
                     //openGallery()
@@ -115,27 +107,23 @@ public class MainActivity extends AppCompatActivity {
                 final String emailValue = email.getText().toString();
                 String passwordValue = password.getText().toString();
 
-                if (usernameValue.isEmpty()){
+                if (usernameValue.isEmpty()) {
                     username.setError("Username Tidak Boleh Kosong");
                     username.requestFocus();
-                }
-                else if(emailValue.isEmpty()){
+                } else if (emailValue.isEmpty()) {
                     email.setError("Email Tidak Boleh Kosong");
                     email.requestFocus();
-                }
-                else if(passwordValue.isEmpty()){
+                } else if (passwordValue.isEmpty()) {
                     password.setError("Password Tidak Boleh Kosong");
                     password.requestFocus();
-                }
-                else if(usernameValue.isEmpty() && emailValue.isEmpty() && passwordValue.isEmpty()){
+                } else if (usernameValue.isEmpty() && emailValue.isEmpty() && passwordValue.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Isi Seluruh Data", Toast.LENGTH_SHORT)
                             .show();
-                }
-                else if(!(usernameValue.isEmpty()) && !(emailValue.isEmpty()) && !(passwordValue.isEmpty())){
+                } else if (!(usernameValue.isEmpty()) && !(emailValue.isEmpty()) && !(passwordValue.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(emailValue, passwordValue).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 User user = new User(
                                         usernameValue,
                                         emailValue);
@@ -145,26 +133,24 @@ public class MainActivity extends AppCompatActivity {
                                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        if(task.isSuccessful()){
+                                        if (task.isSuccessful()) {
                                             updateUserInfo(usernameValue, pickedImgUri, mFirebaseAuth.getCurrentUser());
                                             Toast.makeText(MainActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                             startActivity(intent);
-                                        }else {
+                                        } else {
                                             Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
-                            }
-                            else{
+                            } else {
                                 Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT)
                                         .show();
                             }
                         }
                     });
 
-                }
-                else {
+                } else {
                     Toast.makeText(MainActivity.this, "Error Occured!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -177,35 +163,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-        //Set Dummy Progress Bar
-//        progBar = findViewById(R.id.progressBar);
-//        progBar.setProgress(30);
-
-//        //ListView
-//        listView = findViewById(R.id.lv_materi_matkul);
-//        MyAdapter adapterlist = new MyAdapter(this, judul_materi, jumlah_video);
-//        listView.setAdapter(adapterlist);
-
-        //RecyclerView
-//        recyclerView = findViewById(R.id.rv_materi_himpunan);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        dummyList = new ArrayList<>();
-//
-//        for (int i = 0; i <7 ; i++) {
-//            ListVideo dummyListItem;
-//            dummyListItem = new ListVideo(
-//                    "Himpunan 0" + (i+1),
-//                    20 + (i*10) );
-//            dummyList.add(dummyListItem);
-//        }
-//
-//        adapter =  new ListVideoAdapter(dummyList,this);
-//        recyclerView.setAdapter(adapter);
 
     }
 
@@ -237,39 +194,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    class MyAdapter extends ArrayAdapter<String>{
-        Context context;
-        String rJudul_materi[];
-        int rJumlah_video[];
-
-        MyAdapter(Context c, String judulm[], int jumlahVideo[]){
-            super(c, R.layout.row_lv_materi_matkul, R.id.judul_materi, judulm);
-            this.context = c;
-            this.rJudul_materi = judulm;
-            this.rJumlah_video = jumlahVideo;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.row_lv_materi_matkul, parent, false);
-            TextView judulMateri = row.findViewById(R.id.judul_materi);
-            TextView jumlahVideo = row.findViewById(R.id.jumlah_video);
-
-            judulMateri.setText(rJudul_materi[position]);
-            jumlahVideo.setText(rJumlah_video[position]+"");
-
-
-            return row;
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null){
+        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null) {
             pickedImgUri = data.getData();
             civProfPict.setImageURI(pickedImgUri);
         }

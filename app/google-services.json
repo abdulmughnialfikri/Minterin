@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "443156488521-1jb3igr2084vf3kcnruih2hjgm5eaqb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mighty13.minterin",
+            "certificate_hash": "0ad127b8d4005cb7544214de88fc67a7384e4ca8"
+          }
+        },
+        {
           "client_id": "443156488521-nqsa12vb53h0d8d4p21n4bdghbq312vt.apps.googleusercontent.com",
           "client_type": 3
         }

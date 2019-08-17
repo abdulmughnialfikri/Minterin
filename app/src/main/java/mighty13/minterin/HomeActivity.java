@@ -11,26 +11,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button logout;
-    FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.materi_matkul);
 
-        logout = findViewById(R.id.btn_dummyLogout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
