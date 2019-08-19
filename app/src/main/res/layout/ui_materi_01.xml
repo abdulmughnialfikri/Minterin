@@ -139,12 +139,12 @@
 
         </androidx.cardview.widget.CardView>
 
-        <ListView
-            android:id="@+id/lv_materi_matkul"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_materi_matkul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </ListView>
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

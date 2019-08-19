@@ -33,8 +33,7 @@ public class ListVideoAdapter extends RecyclerView.Adapter<ListVideoAdapter.View
         ListVideo listVideo = listVideos.get(i);
 
         viewHolder.judulVideo.setText(listVideo.getJudulVideo());
-        viewHolder.durasi.setText(listVideo.getDuration()+"");
-
+        viewHolder.durasi.setText(listVideo.getDuration() + "");
     }
 
     @Override
@@ -42,7 +41,7 @@ public class ListVideoAdapter extends RecyclerView.Adapter<ListVideoAdapter.View
         return listVideos.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView judulVideo;
         public TextView durasi;

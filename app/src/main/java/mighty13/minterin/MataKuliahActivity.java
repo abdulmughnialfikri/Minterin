@@ -24,7 +24,7 @@ public class MataKuliahActivity extends AppCompatActivity {
         setContentView(R.layout.ui_materi_01);
 
         //ListView
-        listView = findViewById(R.id.lv_materi_matkul);
+       // listView = findViewById(R.id.lv_materi_matkul);
         MyAdapter adapterlist = new MyAdapter(this, judul_materi, jumlah_video);
         listView.setAdapter(adapterlist);
     }
@@ -51,7 +51,6 @@ public class MataKuliahActivity extends AppCompatActivity {
 
             judulMateri.setText(rJudul_materi[position]);
             jumlahVideo.setText(rJumlah_video[position]+"");
-
 
             return row;
         }

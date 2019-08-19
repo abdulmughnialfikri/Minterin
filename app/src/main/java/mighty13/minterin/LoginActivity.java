@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, DummyLogout.class);
+                                Intent intent = new Intent(LoginActivity.this, ListMateriKuliahActivity.class);
                                 startActivity(intent);
 
                             }
