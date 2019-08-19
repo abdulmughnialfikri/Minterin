@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_materi_card"
+        android:background="@drawable/shape_card_transparent"
         >
 
         <TextView
