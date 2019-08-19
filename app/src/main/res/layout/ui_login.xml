@@ -90,7 +90,7 @@
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/btn_signIn"
-            android:background="@drawable/bg_btn"
+            android:background="@drawable/shape_btn_primary"
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"

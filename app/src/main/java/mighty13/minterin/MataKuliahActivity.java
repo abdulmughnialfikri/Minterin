@@ -21,7 +21,7 @@ public class MataKuliahActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.materi_matkul);
+        setContentView(R.layout.ui_materi_01);
 
         //ListView
         listView = findViewById(R.id.lv_materi_matkul);

@@ -20,7 +20,7 @@ public class ListVideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.materi_konten);
+        setContentView(R.layout.ui_materi_02);
 
         //Set Dummy Progress Bar
         progBar = findViewById(R.id.progressBar);

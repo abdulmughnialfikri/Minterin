@@ -1,30 +1,22 @@
 package mighty13.minterin;
 
 import android.Manifest;
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -34,18 +26,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
-
-
+public class MainActivity2 extends AppCompatActivity {
     EditText username, email, password;
     Button btnSignUp;
     TextView tvToLogin;
@@ -57,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
     static int REQUESTCODE = 1;
 
     private void checkAndRequestForPermission() {
-        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+        if (ContextCompat.checkSelfPermission(MainActivity2.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                Toast.makeText(MainActivity.this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity2.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Toast.makeText(MainActivity2.this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
             } else {
-                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PReqCode);
+                ActivityCompat.requestPermissions(MainActivity2.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PReqCode);
             }
         } else {
             openGallery();
@@ -78,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_page);
+        setContentView(R.layout.ui_login);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         username = findViewById(R.id.et_unameRegist);
@@ -117,10 +105,10 @@ public class MainActivity extends AppCompatActivity {
                     password.setError("Password Tidak Boleh Kosong");
                     password.requestFocus();
                 } else if (usernameValue.isEmpty() && emailValue.isEmpty() && passwordValue.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Isi Seluruh Data", Toast.LENGTH_SHORT)
+                    Toast.makeText(MainActivity2.this, "Isi Seluruh Data", Toast.LENGTH_SHORT)
                             .show();
                 } else if (!(usernameValue.isEmpty()) && !(emailValue.isEmpty()) && !(passwordValue.isEmpty())) {
-                    mFirebaseAuth.createUserWithEmailAndPassword(emailValue, passwordValue).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                    mFirebaseAuth.createUserWithEmailAndPassword(emailValue, passwordValue).addOnCompleteListener(MainActivity2.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
@@ -135,23 +123,23 @@ public class MainActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             updateUserInfo(usernameValue, pickedImgUri, mFirebaseAuth.getCurrentUser());
-                                            Toast.makeText(MainActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                            Toast.makeText(MainActivity2.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(MainActivity2.this, LoginActivity.class);
                                             startActivity(intent);
                                         } else {
-                                            Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(MainActivity2.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
                             } else {
-                                Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT)
+                                Toast.makeText(MainActivity2.this, task.getException().getMessage(), Toast.LENGTH_SHORT)
                                         .show();
                             }
                         }
                     });
 
                 } else {
-                    Toast.makeText(MainActivity.this, "Error Occured!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Error Occured!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -159,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         tvToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity2.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

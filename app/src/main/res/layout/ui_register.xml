@@ -136,7 +136,7 @@
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16sp"
-        android:background="@drawable/bg_btn"
+        android:background="@drawable/shape_btn_primary"
         android:backgroundTint="@color/colorPrimary"
         android:text="daftar"
         android:textColor="@android:color/white"

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_akun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akun"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <ImageView
+                android:id="@+id/img_backgprofil"
+                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:src="@color/colorPrimary"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_profilakun"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/akun"
+                app:civ_border_color="#FF000000"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_namaakun"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:text="Audi Isra"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_jurusan"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="S1 Teknik Informatika"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="audi.isra@student.telkomuniversity.ac.id"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btn_upgradeprofil"
+            android:background="@drawable/shape_upgrade"
+            android:layout_gravity="center"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="95dp"
+            android:text="UPGRADE"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:text="Akun"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_height="24dp"
+                    android:layout_width="24dp"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Profil"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark" />
+
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/tv_editprofil"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="EDIT"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_height="1.4dp"
+                android:layout_width="match_parent"
+                android:src="@drawable/shape_profilhome" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_height="24dp"
+                    android:layout_width="24dp"
+                    android:src="@drawable/email" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Email"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark" />
+
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/tv_editemail"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="EDIT"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_height="1.4dp"
+                android:layout_width="match_parent"
+                android:src="@drawable/shape_profilhome" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_height="24dp"
+                    android:layout_width="24dp"
+                    android:src="@drawable/pass" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:text="Password"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark" />
+
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/tv_editpassword"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="EDIT"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimarySoftDark"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_height="1.4dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:src="@drawable/shape_profilhome" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:text="KELUAR"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</ScrollView>

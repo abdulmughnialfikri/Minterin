@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.ui_login);
 
         tvToRegist = findViewById(R.id.tv_toRegist);
         email = findViewById(R.id.et_emailLogin);
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if(mFirebaseUser != null){
                     //Toast.makeText(LoginActivity.this, "Berhasil Masuk", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MataKuliahActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, DummyLogout.class);
                     startActivity(intent);
                 } else {
                     //Jika Belum Login
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MataKuliahActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, ListVideoActivity.class);
                                 startActivity(intent);
 
                             }
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
         tvToRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
